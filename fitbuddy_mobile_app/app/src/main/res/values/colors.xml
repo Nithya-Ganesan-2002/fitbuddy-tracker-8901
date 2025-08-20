@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fit_primary">#2196F3</color>
+    <color name="fit_secondary">#FF9800</color>
+    <color name="fit_accent">#4CAF50</color>
+    <color name="fit_background">#F7F7F7</color>
+    <color name="fit_surface">#FFFFFF</color>
+    <color name="fit_on_background">#121212</color>
+    <color name="fit_on_surface">#121212</color>
+</resources>

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Proxy script at workspace root to forward to the Android app container wrapper.
+# Ensures Gradle runs from the app project directory with settings.gradle.dcl.
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+APP_DIR="${ROOT_DIR}/fitbuddy_mobile_app"
+WRAPPER="${APP_DIR}/gradlew"
+
+if [[ ! -x "${WRAPPER}" ]]; then
+  echo "Error: Gradle wrapper not found at ${WRAPPER}" >&2
+  exit 127
+fi
+
+# Always run Gradle from the app directory since settings.gradle.dcl lives there.
+cd "${APP_DIR}"
+exec "./gradlew" "$@"
